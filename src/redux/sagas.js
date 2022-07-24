@@ -13,7 +13,11 @@ function* getLocations({ payload }) {
       response.map(res => ({
         ...res,
         id: `${res.place_id}-${res.osm_id}`,
-        label: res.display_name
+        label: res.display_name,
+        pos: {
+          lat: Number(res.lat),
+          lng: Number(res.lon)
+        }
       }))
     ));
   } catch (error) {
