@@ -4,6 +4,8 @@ import {
   useJsApiLoader,
   Marker,
 } from "@react-google-maps/api";
+import { Autocomplete, TextField, Box } from '@mui/material';
+
 
 const containerStyle = {
   width: "100%",
@@ -66,7 +68,15 @@ function App() {
   };
 
   return isLoaded ? (
-    <>
+    <Box sx={{ p: 2 }}>
+      <Autocomplete
+        disablePortal
+        id="combo-box-demo"
+        options={[]}
+        sx={{ width: 300 }}
+        renderInput={(params) => <TextField {...params} label="Search Location" />}
+        noOptionsText="Type Something..."
+      />
       <button onClick={handleClickTest}>Change</button>
       <button onClick={handleClickRevert}>revert</button>
       <GoogleMap
@@ -81,7 +91,7 @@ function App() {
           ))}
         </>
       </GoogleMap>
-    </>
+    </Box>
   ) : (
     <></>
   );
