@@ -1,0 +1,8 @@
+// locations
+export const DATA_LOCATIONS = "DATA_LOCATIONS";
+export const SET_LOCATIONS = "SET_LOCATIONS";
+export const GET_LOCATIONS = "GET_LOCATIONS";
+
+// selectedLocation
+export const DATA_SELECTED_LOCATION = "DATA_SELECTED_LOCATION";
+export const SET_SELECTED_LOCATION = "SET_SELECTED_LOCATION";
