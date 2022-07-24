@@ -1,7 +1,6 @@
-import { all, fork } from "redux-saga/effects";
 import { debounce, put, call } from "redux-saga/effects";
 import { GET_LOCATIONS } from "./actionTypes";
-import { setLocations } from "./actions";
+import { setLocations } from "../redux/actions";
 import axios from 'axios';
 
 function* getLocations({ payload }) {
@@ -29,6 +28,4 @@ function* LocationSaga() {
   yield debounce(1000, GET_LOCATIONS, getLocations);
 }
 
-export default function* rootSaga() {
-  yield all([fork(LocationSaga)]);
-}
+export default LocationSaga;

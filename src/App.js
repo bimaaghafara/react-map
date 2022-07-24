@@ -2,7 +2,8 @@ import React from "react";
 import { Autocomplete, TextField, Box } from '@mui/material';
 import MyMap from "./components/MyMap";
 import { useDispatch, useSelector } from 'react-redux';
-import { getLocations, setSelectedLocation } from './redux/actions';
+import { setSelectedLocation } from './redux/redux/actions';
+import { getLocations } from './redux/saga/actions';
 
 function App() {
   const dispatch = useDispatch();
